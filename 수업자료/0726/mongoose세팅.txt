@@ -1,0 +1,28 @@
+const express = require('express');
+const mongoose = require('mongoose');
+
+//1. 접속주소와 db이름 세팅
+mongoose.connect('mongodb://localhost:27017/data', {userNewUrlParser:true});
+
+
+//2. db연결
+const db = mongoose.connection;
+
+//3. event 이용하여 접속
+db.on('err', ()=>{
+    console.log('connection failed');
+})
+db.once('open', ()=>{
+    console.log('connected');
+})
+
+const app = express();
+app.use(express.urlencoded({ extended: true}))
+
+app.get('/',(req, res)=>{
+    res.send('hi')
+})
+
+app.listen(3000, ()=>{
+    console.log('Express server running...')
+})

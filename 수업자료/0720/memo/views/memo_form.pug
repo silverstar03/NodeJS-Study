@@ -1,0 +1,20 @@
+html 
+    head 
+        link(rel="stylesheet", href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css')
+        title   MEMO
+    body 
+        h3  개인메모장
+        div(id="box")
+            form(action="/memo" method="post")
+                div(class="form-floating mb-3")   
+                    label(for="name")   작성자
+                    input(type="text" class="form-control" id="floatingInput" name="name")    
+                div(class="form-floating mb-3")
+                    label(for="date")   작성일시
+                    input(type="text" class="form-control" id="floatingInput" name="date")
+                div(class="form-floating mb-3") 
+                    textarea(class="form-control" id="content" name="content" style="height: 100px")
+                    label(for="content")    내용
+                p 
+                    input(type="submit" value="저장") 
+                    input(type="reset" value="닫기") 
