@@ -1,0 +1,14 @@
+html 
+    head 
+        title list 
+        meta(charset="utf8")
+    body 
+        h1 
+            a(href="/lang") Server Side Javascript
+        ul 
+            each val in lists 
+                li 
+                    a(href=`lang/${val}`)=val
+        h2 Welcome 
+        h3 hello, nodejs 
+        a(href="lang/new") new
