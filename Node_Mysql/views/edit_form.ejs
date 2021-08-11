@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit</h1>
+    <form action="/edit/<%= rowsX.id %>" method="post">
+        <div>
+            <label for="id">Id</label>
+            <input type="text" name="id" value="<%= rowsX.id %>" disabled>
+        </div>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" value="<%= rowsX.name %>">
+        </div>
+        <div>
+            <label for="emp_number">emp_number</label>
+            <input type="text" name="emp_number" value="<%= rowsX.emp_number %>">
+        </div>
+        <div>
+            <label for="email">email</label>
+            <input type="text" name="email" value="<%= rowsX.email %>">
+        </div>
+        <div>
+            <button type="submit">Update</button>
+        </div>
+    </form>
+</body>
+</html>

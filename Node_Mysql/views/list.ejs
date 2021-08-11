@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>목록</h1>
+    <table>
+        <tr>
+            <td>번호</td>
+            <td>이름</td>
+            <td>사번</td>
+            <td>이메일</td>
+            <td>입사일자</td>
+        </tr>
+        <% lists.forEach((list)=>{ %>
+            <tr>
+                <td><a href='/read/<%=list.id%>'><%=list.id %></a></td>
+                <td><%=list.name %></td>
+                <td><%=list.emp_number %></td>
+                <td><%=list.email %></td>
+                <td><%=list.reg_date %></td>
+            </tr>
+        <% }) %>   
+    </table>
+</body>
+</html>
