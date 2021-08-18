@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/css/table.css">
+</head>
+<body>
+    <% if(user == null){ %>
+        <a href="/login">로그인</a>
+        <a href="/join">회원가입</a>
+    <% } else { %>
+        <a href="/logout">로그아웃</a>
+    <% } %>
+    </br></br>
+    <a href='/write'>글쓰기</a>
+    <h1>BOARD LIST</h1>
+    <table>
+        <tr>
+            <td>번호</td>
+            <td>작성자</td>
+            <td>제목</td>
+            <td>내용</td>
+            <td>첨부파일</td>
+            <td>조회수</td>
+            <td>등록일</td>
+        </tr>
+        <% lists.forEach((list)=>{ %>
+        <tr>
+            <td><%= list.id %> </td>
+            <td><%= list.name %></td>
+            <td><a href='/read/<%= list.id %>'><%= list.title %></a></td>
+            <td><%= list.content %></td>
+            <td><a href='/download/<%= list.file_path %>'><%= list.file_name %></a></td>
+            <td><%= list.hit %></td>
+            <td><%= list.regdate %></td>
+        </tr>
+        <% }) %>
+    </table>
+</br>
+    <form action="/search" method="post">
+        <select id="search" name="select">
+            <option value="title">제목</option>
+            <option value="content">내용</option>
+            <option value="name">작성자</option>
+        </select>
+        <input type="text" name="search">
+        <button type="submit">검색</button>
+    </form>
+</body>
+</html>

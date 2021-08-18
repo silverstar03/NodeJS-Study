@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>본인 확인을 위한 비밀번호 입력</h3>
+
+    <form action="/delete/<%= rowsX.id %>?_method=DELETE" method="post">
+        <table>
+            <tr>
+                <td>패스워드</td>
+                <td>
+                    <input type="password" name="passwd">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">삭제</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

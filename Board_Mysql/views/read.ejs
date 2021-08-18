@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>상세보기</h1>
+    <table>
+        <tr>
+            <td>작성자</td>
+            <td><%= rowsX.name %></td>
+        </tr>
+        <tr>
+            <td>제목</td>
+            <td><%= rowsX.title %></td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td><%= rowsX.content %></td>
+        </tr>
+        <tr>
+            <td>파일</td>
+            <td><img src="../<%= rowsX.file_path %>"></td>
+        </tr>
+        <tr>
+            <td>최근 수정일</td>
+            <td><%= rowsX.modidate %></td>
+        </tr>
+        <tr>
+            <td>등록일</td>
+            <td><%= rowsX.regdate %></td>
+        </tr>
+    </table>
+
+    <button><a href="/edit/<%= rowsX.id %>">수정</a></button>
+    <button><a href="/delete/<%= rowsX.id %>">삭제</a></button>
+</body>
+</html>

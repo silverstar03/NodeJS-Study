@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>수정하기</h1>
+    <form action="/edit/<%= rowsX.id%>?_method=PUT" method="post">
+        <table>
+            <tr>
+                <td>작성자</td>
+                <td>
+                    <input type="text" name="name" value="<%= rowsX.name %>">
+                </td>
+            </tr>
+            <tr>
+                <td>제목</td>
+                <td>
+                    <input type="text" name="title" value="<%= rowsX.title %>">
+                </td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>
+                    <textarea name="content"><%= rowsX.content %></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>패스워드</td>
+                <td>
+                    <input type="password" name="passwd">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">수정</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
